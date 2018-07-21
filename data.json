@@ -1,0 +1,54 @@
+{
+  "details":{
+    "image":"scenary.jpg",
+    "name":"swapna",
+    "phoneno":"9666712350",
+    "email":"manneswapna02@gmail.com",
+    "Address":"srkr engineering college,Bhimavaram"
+  },
+  "career":{
+    "info":"The career objective helps a potential employer to figure out more about what you, as a job applicant, are good at and where your interests lie."
+  },
+  "education":[{
+      "degree":"Btech",
+      "institute":"srkr",
+      "date":["20-07-2020","88%"]
+    },
+    {
+      "degree":"intermidiate",
+      "institute":"sasi",
+      "date":["2016","97%"]
+    },
+    {
+    "degree":"ssc",
+    "institute":"sasi",
+    "date":["12-07-2014","97%"]
+  }
+],
+"keyskills":[
+  {
+    "title":"programming languages",
+    "info":["c,c++,java,python"]
+  },
+  {
+    "title":"operating systems",
+    "info":["windows,linux,ios,ubuntu"]
+  },
+  {
+    "title":"databases",
+    "info":["oracle,sql,mysql"]
+  }
+],
+"achievements":[
+  {
+        "college":"SRkR",
+        "event":"ppt",
+        "prize":"medal"
+      },
+      {
+        "college":"vishnu",
+        "event":"paper presentation",
+        "prize":"certificate"
+        }
+     ]
+  }
