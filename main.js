@@ -1,24 +1,53 @@
-function Loadjson(file,callback){
-  var x = new XMLHttpRequest();
-  x.overrideMimeType("application/json");
-  x.open("GET",file,true);
-  x.onreadystatechange=function(){
-    if(x.readyState === 4 && x.status == "200"){
-      callback(x.responseText);
-    }
-  };
-  x.send(null);
-}
+// function Loadjson(file,callback){
+//   var x = new XMLHttpRequest();
+//   x.overrideMimeType("application/json");
+//   x.open("GET",file,true);
+//   x.onreadystatechange=function(){
+//     if(x.readyState === 4 && x.status == "200"){
+//       callback(x.responseText);
+//     }
+//   };
+//   x.send(null);
+// }
+//
+//  Loadjson("data.json",function(text){
+//    var data= JSON.parse(text);
+//    console.log(data);
+//    basics(data.details);
+//    basics1(data.career);
+//    basics2(data.education);
+//    basics3(data.keyskills);
+//    basics4(data.achievements);
+//  })
+ function loadjson(file)
+ {
+   return new Promise((resolve,reject)=>
+   {
+     return fetch(file) .then(response=>
+       {
+         if(response.ok)
+         {
+           resolve(response.json());
+         }
+         else {
+           reject(new Error('Error'));
+         }
+       })
+     })
+   }
 
- Loadjson("data.json",function(text){
-   var data= JSON.parse(text);
-   console.log(data);
-   basics(data.details);
-   basics1(data.career);
-   basics2(data.education);
-   basics3(data.keyskills);
-   basics4(data.achievements);
+ var file=loadjson("data.json");
+ file.then(data=>
+ {
+    console.log(data);
+    basics(data.details);
+    basics1(data.career);
+    basics2(data.education);
+    basics3(data.keyskills);
+    basics4(data.achievements);
+
  })
+
  var child1 = document.querySelector(".child1");
  function basics(det)
  {
@@ -62,9 +91,9 @@ function Loadjson(file,callback){
      var hr= document.createElement("hr");
      child2.appendChild(hr);
 
-     var info= document.createElement("h3");
-     info.textContent=car.info;
-     child2.appendChild(info);
+     var info1= document.createElement("h3");
+     info1.textContent=car.info;
+     child2.appendChild(info1);
 
      var hr= document.createElement("hr");
      child2.appendChild(hr);
